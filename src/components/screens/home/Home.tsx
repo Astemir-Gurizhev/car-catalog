@@ -16,7 +16,12 @@ const Home = () => {
                     />
                     <div className={styles.info}>
                         <h2>{car.name}</h2>
-                        <p>${car.price}</p>
+                        <p>
+                            {new Intl.NumberFormat('ru-Ru', {
+                                style: 'currency',
+                                currency: 'USD',
+                            }).format(car.price)}
+                        </p>
                         <button>Read more</button>
                     </div>
                 </div>
