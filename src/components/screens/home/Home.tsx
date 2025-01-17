@@ -5,8 +5,8 @@ const Home = () => {
   return (
     <>
       <h1>Cars catalog</h1>
-        <div>
-            {cars.map(car => ( 
+        <div className={styles.items}>
+            {cars.length ? cars.map(car => ( 
                 <div key={car.id} className={styles.item}>
                     <div
                         className={styles.image}
@@ -25,7 +25,9 @@ const Home = () => {
                         <button>Read more</button>
                     </div>
                 </div>
-            ))}
+            ))
+            : <p>There are no cars</p>
+        }
             
         </div>
     </>

@@ -1,6 +1,15 @@
+.items {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
 .item {
   border: 1px solid gray;
-  max-width: 400px;
+  width: 400px;
 }
 
 .image {
