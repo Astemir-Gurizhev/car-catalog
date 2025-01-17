@@ -1,7 +1,6 @@
-import {cars} from "../cars.data"
 import styles from "../Home.module.css";
 
-const CarItem = ({car}) => {
+const CarItem = ({ car }: any) => {
   return (
     <div className={styles.item}>
       <div

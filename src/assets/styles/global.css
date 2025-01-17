@@ -14,3 +14,18 @@ body {
 h1 {
   margin-bottom: 20px;
 }
+
+.btn {
+  display: block;
+  padding: 6px 40px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  margin: 8px;
+}
+
+.btn:hover {
+  background-color: #bcd1e6;
+}
