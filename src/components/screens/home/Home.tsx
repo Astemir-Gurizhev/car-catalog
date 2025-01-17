@@ -1,19 +1,24 @@
+import { useState } from "react";
 import { useMemo } from "react";
 import styles from "./Home.module.css";
-import { cars } from "./cars.data.tsx";
+import { cars as carsData } from "./cars.data.tsx";
 import CarItem from "./car-item/CarItem.tsx";
 import CreateCarForm from "./create-car-form/CreateCarForm.tsx";
 
 const Home = () => {
+  const [cars, setCars] = useState(carsData);
+
   const filteredCars = useMemo(
     () => cars.filter((car) => car.price > 20000),
     []
   );
 
+  console.log(cars);
+
   return (
     <>
       <h1>Cars catalog</h1>
-      <CreateCarForm/>
+      <CreateCarForm setCars={setCars} />
       <div className={styles.items}>
         {filteredCars.length ? (
           filteredCars.map((car) => <CarItem key={car.id} car={car} />)

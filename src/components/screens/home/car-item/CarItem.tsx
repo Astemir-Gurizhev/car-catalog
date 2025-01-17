@@ -1,6 +1,6 @@
 import styles from "../Home.module.css";
 
-const CarItem = ({ car }: any) => {
+const CarItem = ({ car }) => {
   return (
     <div className={styles.item}>
       <div
