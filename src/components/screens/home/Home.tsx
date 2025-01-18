@@ -1,4 +1,3 @@
-import axios from "axios";
 import { useState, useMemo, useEffect } from "react";
 import styles from "./Home.module.css";
 import { cars as carsData } from "./cars.data.tsx";
