@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { useMemo } from "react";
+import axios from "axios";
+import { useState, useMemo, useEffect } from "react";
 import styles from "./Home.module.css";
 import { cars as carsData } from "./cars.data.tsx";
 import CarItem from "./car-item/CarItem.tsx";
@@ -12,6 +12,14 @@ const Home = () => {
     () => cars.filter((car) => car.price > 20000),
     []
   );
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await axios.get("...API");
+      // setCars(response.data);
+    };
+    fetchData();
+  }, []);
 
   console.log(cars);
 
