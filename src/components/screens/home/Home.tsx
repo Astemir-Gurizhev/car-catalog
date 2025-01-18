@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState, useMemo, useEffect } from "react";
 import styles from "./Home.module.css";
 import { cars as carsData } from "./cars.data.tsx";
+import { CarService } from "../../../services/car.service.ts";
 import CarItem from "./car-item/CarItem.tsx";
 import CreateCarForm from "./create-car-form/CreateCarForm.tsx";
 
@@ -15,8 +16,8 @@ const Home = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get("...API");
-      // setCars(response.data);
+      const data = await CarService.getAll()
+      // setCars(data);
     };
     fetchData();
   }, []);
