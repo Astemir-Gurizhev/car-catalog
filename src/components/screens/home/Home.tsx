@@ -17,6 +17,8 @@ const Home = () => {
     const fetchData = async () => {
       const data = await CarService.getAll()
       // setCars(data);
+      console.log(data);
+      
     };
     fetchData();
   }, []);
