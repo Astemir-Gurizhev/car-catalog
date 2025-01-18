@@ -1,6 +1,6 @@
+import { useParams } from "react-router-dom";
 const CarDetail = () => {
-    return (
-        <h1>Car detail</h1>
-    )
-}
-export default CarDetail
+  const { id } = useParams();
+  return <h1>Car detail {id}</h1>;
+};
+export default CarDetail;
