@@ -1,6 +1,30 @@
 import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { CarService } from "../../../services/car.service";
+import CarItem from "../home/car-item/CarItem";
+import { Link } from "react-router-dom";
+
 const CarDetail = () => {
   const { id } = useParams();
-  return <h1>Car detail {id}</h1>;
+
+  const [car, setCar] = useState({});
+
+  useEffect(() => {
+    if (!id) return;
+
+    const fetchData = async () => {
+      const data = await CarService.getById(id);
+      setCar(data);
+      console.log(data);
+    };
+    fetchData();
+  }, [id]);
+
+  return (
+    <>
+        <Link to='/'>Back</Link>
+      <CarItem car={car} />
+    </>
+  );
 };
 export default CarDetail;

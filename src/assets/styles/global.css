@@ -16,14 +16,20 @@ h1 {
 }
 
 .btn {
-  display: block;
-  padding: 6px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 30px;
   border: none;
   outline: none;
   border-radius: 5px;
   transition: all 0.3s ease;
   cursor: pointer;
   margin: 8px;
+  text-decoration: none;
+  color: #111;
+  background-color: #fff;
+  max-width: 100px;
 }
 
 .btn:hover {

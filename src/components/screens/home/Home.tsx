@@ -13,18 +13,6 @@ const Home = () => {
     []
   );
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await CarService.getAll()
-      // setCars(data);
-      console.log(data);
-      
-    };
-    fetchData();
-  }, []);
-
-  console.log(cars);
-
   return (
     <>
       <h1>Cars catalog</h1>
