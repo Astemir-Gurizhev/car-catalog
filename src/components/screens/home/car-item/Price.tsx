@@ -1,4 +1,5 @@
-const Price = ({price}) => {
+ import React from "react"
+ const Price = ({ price }) => {
   return (
     <p>
       {new Intl.NumberFormat("ru-Ru", {
@@ -8,4 +9,4 @@ const Price = ({price}) => {
     </p>
   );
 };
-export default Price;
+export default React.memo(Price);
