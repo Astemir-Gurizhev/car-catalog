@@ -3,7 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { CarService } from "../../../services/car.service";
 import CarItem from "../home/car-item/CarItem";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../../providers/AuthProvider";
+import { withAuth } from "../../../HOC/withAuth";
 
 const CarDetail = () => {
   const { id } = useParams();
@@ -21,10 +21,6 @@ const CarDetail = () => {
     fetchData();
   }, [id]);
 
-  const {user} = useContext(AuthContext)
-
-  if (!user) return <p>You are not authorized to viev this page</p>;
-
   return (
     <>
       <Link to="/">Back</Link>
@@ -32,4 +28,4 @@ const CarDetail = () => {
     </>
   );
 };
-export default CarDetail;
+export default withAuth(CarDetail);
