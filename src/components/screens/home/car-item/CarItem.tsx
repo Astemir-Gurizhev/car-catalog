@@ -1,7 +1,8 @@
 import styles from "../Home.module.css";
 import { Link } from "react-router-dom";
 import Price from "./Price";
-const CarItem = ({ car }) => {
+import { ICar } from '../../../../types/car.interface'
+const CarItem = ({ car }: {car: ICar}) => {
   return (
     <div className={styles.item}>
       <div

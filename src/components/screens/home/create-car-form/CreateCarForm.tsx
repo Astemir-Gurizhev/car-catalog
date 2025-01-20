@@ -1,16 +1,15 @@
 import { useState } from "react";
 import styles from "./CreateCarForm.module.css";
-
 const clearData = {
   name: "",
   price: "",
   image: "",
 };
 
-const CreateCarForm = ({ setCars }) => {
+const CreateCarForm = ({ setCars = [] }) => {
   const [data, setData] = useState(clearData);
 
-  const createCar = (e) => {
+  const createCar = (e: React.FormEvent<HTMLFormElement>)=> {
     e.preventDefault();
     setCars((prev) => [{ id: prev.length + 1, ...data }, ...prev]);
 
@@ -51,7 +50,7 @@ const CreateCarForm = ({ setCars }) => {
           value={data.image}
         />
       </div>
-      <button className="btn" onClick={(e) => createCar(e)}>
+      <button className="btn" onClick={(e:React.FormEvent<HTMLFormElement>) => createCar(e)}>
         Create
       </button>
     </form>

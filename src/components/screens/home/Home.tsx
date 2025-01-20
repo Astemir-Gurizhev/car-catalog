@@ -5,9 +5,10 @@ import { CarService } from "../../../services/car.service.ts";
 import CarItem from "./car-item/CarItem.tsx";
 import CreateCarForm from "./create-car-form/CreateCarForm.tsx";
 import { AuthContext } from "../../../providers/AuthProvider.tsx";
+import { ICar } from '../../../types/car.interface.ts'
 
 const Home = () => {
-  const [cars, setCars] = useState(carsData);
+  const [cars, setCars] = useState<ICar[]>(carsData); 
 
   const clearCars = useCallback(
     () => () => {
@@ -21,7 +22,7 @@ const Home = () => {
     []
   );
 
-  useEffect(() => {
+  useEffect(():any => {
     const fetchData = async () => {
       const data = await CarService.getAll();
       setCars(data);
